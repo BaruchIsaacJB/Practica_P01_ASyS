@@ -1,8 +1,8 @@
 # Practica_P01_ASyS
 Entrega de actividades practica P01 Análisis Señales y Sistemas
 <! DOCTYPE html PUBLIC "- // W3C // DTD HTML 4.01 Transitional // EN" >
-< html > < head > < meta  http-equiv = " Content-Type " content = " text / html; charset = utf-8 " > < meta  http-equiv = " X-UA-Compatible " content = " IE = edge , IE = 9, chrome = 1 " > < meta  name =" generator " content =" MATLAB R2019b " > < title > Practica P01 </ title >< estilo tipo = " texto / css " > . rtcContent { relleno : 30 px ; }. S0 { margen : 3 px  10 px  5 px  4 px ; relleno : 0 px ; altura de línea : 28,8 px ; altura mínima : 0 px ; espacio en blanco : preenvío; color : rgb ( 213 ,  80 ,  0); familia de fuentes : Helvetica , Arial , sans-serif; estilo de fuente : normal; tamaño de fuente : 24 px ; peso de fuente : 400 ; alineación de texto : izquierda; }
 . S1 { margen : 2 px  10 px  9 px  4 px ; relleno : 0 px ; altura de línea : 21 px ; altura mínima : 0 px ; espacio en blanco : preenvío; color : rgb ( 0 ,  0 ,  0 ); familia de fuentes : Helvetica , Arial , sans-serif; estilo de fuente : normal; tamaño de fuente :14 px ; peso de fuente : 400 ; alineación de texto : izquierda; }
+< html > < head > < meta  http-equiv = " Content-Type " content = " text / html; charset = utf-8 " > < meta  http-equiv = " X-UA-Compatible " content = " IE = edge , IE = 9, chrome = 1 " > < meta  name =" generator " content =" MATLAB R2019b " > < title > Practica P01 </ title >< estilo tipo = " texto / css " > . rtcContent { relleno : 30 px ; }. S0 { margen : 3 px  10 px  5 px  4 px ; relleno : 0 px ; altura de línea : 28,8 px ; altura mínima : 0 px ; espacio en blanco : preenvío; color : rgb ( 213 ,  80 ,  0); familia de fuentes : Helvetica , Arial , sans-serif; estilo de fuente : normal; tamaño de fuente : 24 px ; peso de fuente : 400 ; alineación de texto : izquierda; }
 . S2 { margen : 10 px  0 px  20 px ; padding-left : 0 px ; familia de fuentes : Helvetica , Arial , sans-serif; tamaño de fuente : 14 px ; }
 . S3 { margen izquierdo : 56 px ; altura de línea : 21 px ; altura mínima : 0 px ; alineación de texto : izquierda; espacio en blanco : preenvío; }
 . S4 { margen inferior : 20 px ; fondo acolchado : 4 px ; }
@@ -133,16 +133,6 @@ t = (-2: 2);
 % un vector de 5 elementos entre 0 y 5
 % Y utilizando como un argumento obtenemos:
 pie)
-%% 
-% Para realizar la grafica podemos apoyarnos de la funcion plot ():
-gráfico (t, f (t), 'g');
-xlabel ("t"); ylabel ("f (t)"); cuadrícula;
-título ('FUNCION f (t) PARA 5 VALORES');
-% Podemos hacer la grafica mas definida para f (t) si hacermos el vector t contenga mas
-% valores en el mismo intervalo. Definiremos 200 valores en este intervalo:
-t = (-2: 0,01: 2);
-% GRAFICAMOS
-gráfico (t, f (t), 'g');
 xlabel ("t"); ylabel ("f (t)"); cuadrícula; xlim ([- 2 2]);
 título ('FUNCION f (t) PARA 200 VALORES');
 % 
@@ -155,51 +145,8 @@ clc;
 claro;
 syms t
 syms k
-%% 
-% $$ \ textrm {Dada} \; \ textrm {la} \; \ textrm {función} \; \ textrm {de} \; \ textrm {forma} \; \ textrm {grafica}, \ textrm {resolver} \ ; \ textrm {los} \; \ textrm {incisos}: $$
-x = @ (t) -1 * t. * ((t> = - 4) & (t <0)) + t. * ((t> 0) & (t <= 2));
-t = (-4,001: 0,001: 2,001);
-parcela (t, x (t));
-título ('Figura P1.2-2');
-xlabel ('t'); ylabel ('x (t)'); cuadrícula activada;
 eje ([- 10 7 -1 4,5]);
 % A → Traslación horizontal
 % $$ \ textrm {Conociendo} \; x \ left (t \ right) \; \ textrm {Bosquejar} \; x \ left (t-4 \ right) $$
 t = (- 0,001: 0,001: 6,001);
 gráfico (t, x (t-4));
-xlabel ('t'); ylabel ('x (t-4)'); grid on; title ('Traslación horizontal');
-eje ([- 10 7 -1 4,5]);
-% B → Escalamiento Horizontal
-% $$ \ textrm {Conociendo} \; x \ left (t \ right) \; \ textrm {Bosquejar} \; x \ left (\ frac {t} {1 \ ldotp 
-% 5} \ derecha) $$
-t = (- 6,001: 0,001: 3,001);
-gráfico (t, x (t / 1,5));
-xlabel ('t'); ylabel ('x (t / 1.5)'); grid on; title ('Escalamiento Horizontal');
-eje ([- 10 7 -1 4,5]);
-% C → Inversión horizontal
-% $$ \ textrm {Conociendo} \; x \ left (t \ right) \; \ textrm {Bosquejar} \; x \ left (-t \ right) $$
-t = (-2,001: 0,001: 4,001);
-gráfico (t, x (-t));
-xlabel ('t'); ylabel ('x (-t)'); cuadrícula activada; título ('Inversión horizontal x (-t)');
-eje ([- 10 7 -1 4,5]);
-% D → Compresión y Traslación Horizontal
-% $$ \ textrm {Conociendo} \; x \ left (t \ right) \; \ textrm {Bosquejar} \; x \ left (2t-4 \ right) $$
-t = (- 0,001: 0,001: 3,001);
-gráfico (t, x (2 * t-4));
-xlabel ('t'); ylabel ('x (2 * t-4)'); grid on; title ('Compresion y Traslacion Horizontal x (2t-4)');
-eje ([- 10 7 -1 4,5]);
-% E → Inversión y Traslación Horizontal
-% $$ \ textrm {Conociendo} \; x \ left (t \ right) \; \ textrm {Bosquejar} \; x \ left (2-t \ right) $$ 
-t = (- 0,001: 0,001: 6,001);
-gráfico (t, x (2-t));
-xlabel ('t'); ylabel ('x (2-t)'); grid on; title ('Inversión y Traslación Horizontal x (2-t)');
-eje ([- 10 7 -1 4,5]);
-%% 
-% 
-% 
-% 
-% 
-% 
-%
-##### FIN DE FUENTE #####
--> </ cuerpo > </ html >
